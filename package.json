@@ -1,0 +1,25 @@
+{
+  "name": "template-marketplace-0001",
+  "version": "1.0.0",
+  "private": true,
+  "type": "module",
+  "description": "Template de site de associação com marketplace (00047): a região, os números, a organização, os produtos de todos os associados e a página de cada um, com o @ocahub/kit e seções editáveis no painel",
+  "scripts": {
+    "dev": "nuxt dev --port 3025",
+    "build": "nuxt build",
+    "preview": "nuxt preview",
+    "postinstall": "nuxt prepare",
+    "kit:sync": "npm --prefix ../rhfactor-kit run build && npm install --no-save --install-links ../rhfactor-kit --no-audit --no-fund",
+    "typecheck": "nuxt typecheck"
+  },
+  "dependencies": {
+    "@ocahub/kit": "^0.14.0",
+    "nuxt": "^4.5.2"
+  },
+  "devDependencies": {
+    "@types/node": "^22.20.5",
+    "typescript": "^5.9.0",
+    "vue-tsc": "^3.1.0",
+    "@nuxtjs/tailwindcss": "^6.14.0"
+  }
+}

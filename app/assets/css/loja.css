@@ -1,0 +1,47 @@
+/*
+ * As paginas do marketplace (@ocahub/kit) com a cara do template: os tokens
+ * --rh-* ganham as cores e a fonte da aparencia escolhida no painel.
+ */
+.tpl {
+  --rh-font: var(--t-body);
+  --rh-color-bg: rgb(var(--t-cream));
+  --rh-color-text: rgb(var(--t-ink));
+  --rh-color-muted: rgb(var(--t-muted));
+  --rh-color-border: rgb(var(--t-sand));
+  --rh-color-surface: #FFFFFF;
+  --rh-color-accent: rgb(var(--t-moss));
+  --rh-color-accent-contrast: #FFFFFF;
+  --rh-radius: 14px;
+  --rh-radius-sm: 10px;
+  --rh-max-width: 1200px;
+  --rh-shadow: 0 1px 2px rgb(var(--t-ink) / .05), 0 12px 32px rgb(var(--t-ink) / .08);
+}
+
+.rh-form__title, .rh-shelf__title, .rh-product__name, .rh-section-title, .rh-panel__title {
+  font-weight: 700;
+  color: rgb(var(--t-moss-dark));
+  letter-spacing: -.01em;
+}
+.rh-shelf__title, .rh-form__title { font-size: clamp(2rem, 3.6vw, 2.8rem); line-height: 1.1; }
+.rh-product__name { font-size: clamp(1.8rem, 3vw, 2.4rem); line-height: 1.1; }
+.rh-card__badge { background: rgb(var(--t-clay)); color: #fff; }
+
+.rh-button { min-height: 48px; border-radius: 999px; background: rgb(var(--t-moss)); font-weight: 600; }
+.rh-button:hover { background: rgb(var(--t-moss-dark)); opacity: 1; }
+
+.rh-shelf, .rh-product, .rh-cart, .rh-checkout, .rh-account, .rh-purchase, .rh-auth { padding-top: 48px; padding-bottom: 80px; }
+
+/* Cabecalho: sacola e conta no estilo do menu (fundo verde). */
+.rv-header-actions { display: flex; align-items: center; gap: 1rem; }
+.rv-header-actions .rh-account-button, .rv-header-actions .rh-cart-button { color: #fff; }
+.rv-header-actions .rh-account-button:hover, .rv-header-actions .rh-cart-button:hover { color: rgb(var(--t-blush)); }
+.rv-header-actions .rh-cart-button__count { background: rgb(var(--t-ember)); color: #fff; }
+
+/* Aviso de "no carrinho" (plugins/cart.client.ts). */
+.site-toast {
+  position: fixed; left: 50%; bottom: 24px; transform: translateX(-50%); z-index: 2000;
+  max-width: calc(100vw - 32px); padding: 14px 22px; border-radius: 999px;
+  background: rgb(var(--t-moss-dark)); color: rgb(var(--t-cream)); font-size: .9rem;
+}
+.site-toast-enter-active, .site-toast-leave-active { transition: opacity .2s, transform .2s; }
+.site-toast-enter-from, .site-toast-leave-to { opacity: 0; transform: translate(-50%, 8px); }

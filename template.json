@@ -1,0 +1,905 @@
+{
+  "id": "template-marketplace-0001",
+  "name": "Marketplace 0001 · Associação",
+  "version": "1.0.0",
+  "description": "Site de associação com marketplace: a região, o território, os números, a organização, os produtos de todos os associados e a página de cada um. Verde, terracota e creme.",
+  "modules": [
+    "sales:ManageMarketplace"
+  ],
+  "groups": [
+    "Topo",
+    "Conteúdo",
+    "Marketplace"
+  ],
+  "theme": {
+    "palettes": [
+      {
+        "id": "verde",
+        "label": "Verde e terracota",
+        "moss": "#4A6548",
+        "mossDark": "#2F3F2E",
+        "mossLight": "#6E8A6B",
+        "clay": "#A15330",
+        "clayDark": "#7E3F23",
+        "ember": "#D4421F",
+        "slate": "#394459",
+        "cream": "#F4F1EA",
+        "sand": "#D3D0C3",
+        "blush": "#F4D9CC",
+        "ink": "#1F2A1E",
+        "ink2": "#3E4A3C",
+        "muted": "#5E6A5C"
+      },
+      {
+        "id": "terra",
+        "label": "Terra e ouro",
+        "moss": "#6B4A2E",
+        "mossDark": "#3F2B1B",
+        "mossLight": "#8E6A4A",
+        "clay": "#9C7A2E",
+        "clayDark": "#7A5F22",
+        "ember": "#C7682A",
+        "slate": "#4A3B33",
+        "cream": "#F6F1E9",
+        "sand": "#DCCFBD",
+        "blush": "#F3E2C4",
+        "ink": "#2B1F16",
+        "ink2": "#4A3A2E",
+        "muted": "#6E5E50"
+      },
+      {
+        "id": "serra",
+        "label": "Serra azul",
+        "moss": "#2E5266",
+        "mossDark": "#1E3644",
+        "mossLight": "#4F7489",
+        "clay": "#A0522D",
+        "clayDark": "#7D3F22",
+        "ember": "#D2691E",
+        "slate": "#2F3B4C",
+        "cream": "#F2F4F3",
+        "sand": "#CFD6D6",
+        "blush": "#F6DCC8",
+        "ink": "#16232B",
+        "ink2": "#34444E",
+        "muted": "#566872"
+      }
+    ],
+    "fonts": [
+      {
+        "id": "inter",
+        "label": "Moderna",
+        "display": "'Inter', system-ui, sans-serif",
+        "body": "'Inter', system-ui, sans-serif",
+        "weight": 700
+      },
+      {
+        "id": "classica",
+        "label": "Clássica",
+        "display": "'Lora', Georgia, serif",
+        "body": "'Inter', system-ui, sans-serif",
+        "weight": 600
+      }
+    ]
+  },
+  "sections": [
+    {
+      "type": "header",
+      "label": "Cabeçalho",
+      "group": "Global",
+      "global": true,
+      "description": "Logotipo, nome, menu, conta e carrinho. Aparece em todas as páginas.",
+      "fields": [
+        {
+          "key": "logoImage",
+          "label": "Logo (imagem)",
+          "type": "image",
+          "optional": true,
+          "help": "Sem imagem, vale o logotipo da loja."
+        },
+        {
+          "key": "name",
+          "label": "Nome ao lado do logo",
+          "type": "area",
+          "optional": true,
+          "help": "Uma palavra por linha."
+        },
+        {
+          "key": "links",
+          "label": "Menu",
+          "type": "items",
+          "min": 0,
+          "max": 8,
+          "itemTitle": "label",
+          "fields": [
+            {
+              "key": "label",
+              "label": "Texto",
+              "type": "text"
+            },
+            {
+              "key": "link",
+              "label": "Link",
+              "type": "text",
+              "help": "Ex.: /#regiao, /associados, /produtos."
+            }
+          ],
+          "newItem": {
+            "label": "Novo link",
+            "link": "/"
+          },
+          "help": "As páginas criadas no editor (com \"no menu\") entram depois destes."
+        }
+      ]
+    },
+    {
+      "type": "hero",
+      "label": "Abertura com foto de fundo",
+      "group": "Topo",
+      "description": "Foto de fundo, logotipo grande, uma imagem com o título (ou o título em texto) e dois botões.",
+      "fields": [
+        {
+          "key": "background",
+          "label": "Foto de fundo",
+          "type": "image",
+          "optional": true
+        },
+        {
+          "key": "logo",
+          "label": "Logo grande",
+          "type": "image",
+          "optional": true
+        },
+        {
+          "key": "titleImage",
+          "label": "Título em imagem",
+          "type": "image",
+          "optional": true,
+          "help": "Sem imagem, vale o título em texto."
+        },
+        {
+          "key": "title",
+          "label": "Título em texto",
+          "type": "text",
+          "optional": true
+        },
+        {
+          "key": "button",
+          "label": "Botão principal",
+          "type": "text"
+        },
+        {
+          "key": "link",
+          "label": "Link do botão principal",
+          "type": "text",
+          "help": "Ex.: /produtos, /associados, /#regiao ou um endereço completo. Vazio: abre o WhatsApp da loja."
+        },
+        {
+          "key": "button2",
+          "label": "Botão secundário",
+          "type": "text",
+          "optional": true
+        },
+        {
+          "key": "link2",
+          "label": "Link do botão secundário",
+          "type": "text",
+          "help": "Ex.: /produtos, /associados, /#regiao ou um endereço completo. Vazio: abre o WhatsApp da loja."
+        }
+      ]
+    },
+    {
+      "type": "split",
+      "label": "Texto com imagem ao lado",
+      "group": "Conteúdo",
+      "description": "Chamada, título, texto e uma imagem (mapa, foto) ao lado.",
+      "fields": [
+        {
+          "key": "anchor",
+          "label": "Âncora",
+          "type": "text",
+          "optional": true,
+          "help": "Para o menu levar até aqui: com \"regiao\", o link /#regiao."
+        },
+        {
+          "key": "bg",
+          "label": "Fundo",
+          "type": "select",
+          "options": [
+            {
+              "value": "claro",
+              "label": "Fundo claro"
+            },
+            {
+              "value": "branco",
+              "label": "Fundo branco"
+            },
+            {
+              "value": "verde",
+              "label": "Fundo na cor principal"
+            },
+            {
+              "value": "escuro",
+              "label": "Fundo escuro"
+            }
+          ]
+        },
+        {
+          "key": "eyebrow",
+          "label": "Chamada pequena",
+          "type": "text",
+          "optional": true
+        },
+        {
+          "key": "title",
+          "label": "Título",
+          "type": "text"
+        },
+        {
+          "key": "text",
+          "label": "Texto",
+          "type": "area",
+          "help": "Parágrafos separados por uma linha em branco."
+        },
+        {
+          "key": "image",
+          "label": "Imagem",
+          "type": "image",
+          "optional": true
+        }
+      ]
+    },
+    {
+      "type": "text",
+      "label": "Texto",
+      "group": "Conteúdo",
+      "description": "Chamada, título e parágrafos, em coluna estreita.",
+      "fields": [
+        {
+          "key": "anchor",
+          "label": "Âncora",
+          "type": "text",
+          "optional": true,
+          "help": "Para o menu levar até aqui: com \"regiao\", o link /#regiao."
+        },
+        {
+          "key": "bg",
+          "label": "Fundo",
+          "type": "select",
+          "options": [
+            {
+              "value": "claro",
+              "label": "Fundo claro"
+            },
+            {
+              "value": "branco",
+              "label": "Fundo branco"
+            },
+            {
+              "value": "verde",
+              "label": "Fundo na cor principal"
+            },
+            {
+              "value": "escuro",
+              "label": "Fundo escuro"
+            }
+          ]
+        },
+        {
+          "key": "eyebrow",
+          "label": "Chamada pequena",
+          "type": "text",
+          "optional": true
+        },
+        {
+          "key": "title",
+          "label": "Título",
+          "type": "text"
+        },
+        {
+          "key": "text",
+          "label": "Texto",
+          "type": "area",
+          "help": "Parágrafos separados por uma linha em branco."
+        }
+      ]
+    },
+    {
+      "type": "gallery",
+      "label": "Texto e galeria",
+      "group": "Conteúdo",
+      "description": "Título e texto lado a lado, e uma faixa de fotos.",
+      "fields": [
+        {
+          "key": "anchor",
+          "label": "Âncora",
+          "type": "text",
+          "optional": true,
+          "help": "Para o menu levar até aqui: com \"regiao\", o link /#regiao."
+        },
+        {
+          "key": "bg",
+          "label": "Fundo",
+          "type": "select",
+          "options": [
+            {
+              "value": "claro",
+              "label": "Fundo claro"
+            },
+            {
+              "value": "branco",
+              "label": "Fundo branco"
+            },
+            {
+              "value": "verde",
+              "label": "Fundo na cor principal"
+            },
+            {
+              "value": "escuro",
+              "label": "Fundo escuro"
+            }
+          ]
+        },
+        {
+          "key": "eyebrow",
+          "label": "Chamada pequena",
+          "type": "text",
+          "optional": true
+        },
+        {
+          "key": "title",
+          "label": "Título",
+          "type": "text"
+        },
+        {
+          "key": "text",
+          "label": "Texto",
+          "type": "area",
+          "help": "Parágrafos separados por uma linha em branco."
+        },
+        {
+          "key": "images",
+          "label": "Fotos",
+          "type": "items",
+          "min": 0,
+          "max": 8,
+          "itemTitle": "alt",
+          "fields": [
+            {
+              "key": "image",
+              "label": "Foto",
+              "type": "image"
+            },
+            {
+              "key": "alt",
+              "label": "Descrição da foto",
+              "type": "text"
+            }
+          ],
+          "newItem": {
+            "image": "",
+            "alt": "Foto"
+          }
+        }
+      ]
+    },
+    {
+      "type": "stats",
+      "label": "Números",
+      "group": "Conteúdo",
+      "description": "Números grandes com o nome, em fundo escuro.",
+      "fields": [
+        {
+          "key": "anchor",
+          "label": "Âncora",
+          "type": "text",
+          "optional": true,
+          "help": "Para o menu levar até aqui: com \"regiao\", o link /#regiao."
+        },
+        {
+          "key": "title",
+          "label": "Título",
+          "type": "text"
+        },
+        {
+          "key": "items",
+          "label": "Números",
+          "type": "items",
+          "min": 1,
+          "max": 9,
+          "itemTitle": "label",
+          "fields": [
+            {
+              "key": "value",
+              "label": "Número",
+              "type": "text"
+            },
+            {
+              "key": "label",
+              "label": "Nome",
+              "type": "text"
+            },
+            {
+              "key": "note",
+              "label": "Nota",
+              "type": "text",
+              "optional": true
+            }
+          ],
+          "newItem": {
+            "value": "0",
+            "label": "Nome"
+          }
+        },
+        {
+          "key": "footnote",
+          "label": "Nota de rodapé",
+          "type": "text",
+          "optional": true
+        }
+      ]
+    },
+    {
+      "type": "features",
+      "label": "Características com foto de fundo",
+      "group": "Conteúdo",
+      "description": "Título e cartões (nome e texto) sobre uma foto escurecida.",
+      "fields": [
+        {
+          "key": "anchor",
+          "label": "Âncora",
+          "type": "text",
+          "optional": true,
+          "help": "Para o menu levar até aqui: com \"regiao\", o link /#regiao."
+        },
+        {
+          "key": "background",
+          "label": "Foto de fundo",
+          "type": "image",
+          "optional": true
+        },
+        {
+          "key": "title",
+          "label": "Título",
+          "type": "text"
+        },
+        {
+          "key": "items",
+          "label": "Cartões",
+          "type": "items",
+          "min": 1,
+          "max": 6,
+          "itemTitle": "name",
+          "fields": [
+            {
+              "key": "name",
+              "label": "Nome",
+              "type": "text"
+            },
+            {
+              "key": "text",
+              "label": "Texto",
+              "type": "area"
+            }
+          ],
+          "newItem": {
+            "name": "Nome",
+            "text": "Texto"
+          }
+        }
+      ]
+    },
+    {
+      "type": "governance",
+      "label": "Organização",
+      "group": "Conteúdo",
+      "description": "Quem somos: texto, um destaque, um cartão (propósito) e uma imagem larga (organograma).",
+      "fields": [
+        {
+          "key": "anchor",
+          "label": "Âncora",
+          "type": "text",
+          "optional": true,
+          "help": "Para o menu levar até aqui: com \"regiao\", o link /#regiao."
+        },
+        {
+          "key": "eyebrow",
+          "label": "Chamada pequena",
+          "type": "text",
+          "optional": true
+        },
+        {
+          "key": "title",
+          "label": "Título",
+          "type": "text"
+        },
+        {
+          "key": "lead",
+          "label": "Texto",
+          "type": "area"
+        },
+        {
+          "key": "highlight",
+          "label": "Destaque",
+          "type": "text",
+          "optional": true
+        },
+        {
+          "key": "text",
+          "label": "Texto depois do destaque",
+          "type": "area",
+          "optional": true
+        },
+        {
+          "key": "cardTitle",
+          "label": "Título do cartão",
+          "type": "text"
+        },
+        {
+          "key": "cardText",
+          "label": "Texto do cartão",
+          "type": "area"
+        },
+        {
+          "key": "image",
+          "label": "Imagem larga",
+          "type": "image",
+          "optional": true
+        }
+      ]
+    },
+    {
+      "type": "products",
+      "label": "Produtos dos associados",
+      "group": "Marketplace",
+      "description": "Os produtos à venda de todos os associados: cada cartão leva ao produto, com quem vende.",
+      "fields": [
+        {
+          "key": "eyebrow",
+          "label": "Chamada pequena",
+          "type": "text",
+          "optional": true
+        },
+        {
+          "key": "title",
+          "label": "Título",
+          "type": "text"
+        },
+        {
+          "key": "text",
+          "label": "Texto",
+          "type": "area",
+          "optional": true
+        },
+        {
+          "key": "button",
+          "label": "Link para todos",
+          "type": "text",
+          "optional": true
+        },
+        {
+          "key": "count",
+          "label": "Quantidade",
+          "type": "select",
+          "options": [
+            {
+              "value": "4",
+              "label": "4"
+            },
+            {
+              "value": "8",
+              "label": "8"
+            },
+            {
+              "value": "12",
+              "label": "12"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "type": "members",
+      "label": "Associados",
+      "group": "Marketplace",
+      "description": "Os associados (as lojas ligadas ao marketplace), com logo e local. Cada um leva à página dele.",
+      "fields": [
+        {
+          "key": "anchor",
+          "label": "Âncora",
+          "type": "text",
+          "optional": true,
+          "help": "Para o menu levar até aqui: com \"regiao\", o link /#regiao."
+        },
+        {
+          "key": "eyebrow",
+          "label": "Chamada pequena",
+          "type": "text",
+          "optional": true
+        },
+        {
+          "key": "title",
+          "label": "Título",
+          "type": "text"
+        },
+        {
+          "key": "button",
+          "label": "Link para todos",
+          "type": "text",
+          "optional": true
+        },
+        {
+          "key": "count",
+          "label": "Quantidade",
+          "type": "select",
+          "options": [
+            {
+              "value": "4",
+              "label": "4"
+            },
+            {
+              "value": "8",
+              "label": "8"
+            },
+            {
+              "value": "12",
+              "label": "12"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "type": "footer",
+      "label": "Rodapé",
+      "group": "Global",
+      "global": true,
+      "description": "Endereço, contato ({email}, {whatsapp}), redes e logos de apoio. O link /#contato leva até aqui.",
+      "fields": [
+        {
+          "key": "addressTitle",
+          "label": "Título do endereço",
+          "type": "text"
+        },
+        {
+          "key": "address",
+          "label": "Endereço",
+          "type": "area",
+          "help": "Uma linha por linha do endereço. Vazio: {endereco}."
+        },
+        {
+          "key": "contactText",
+          "label": "Texto do contato",
+          "type": "text",
+          "optional": true
+        },
+        {
+          "key": "facebook",
+          "label": "Facebook (endereço)",
+          "type": "text",
+          "optional": true
+        },
+        {
+          "key": "supportTitle",
+          "label": "Título dos apoios",
+          "type": "text",
+          "optional": true
+        },
+        {
+          "key": "logos",
+          "label": "Logos de apoio",
+          "type": "items",
+          "min": 0,
+          "max": 8,
+          "itemTitle": "alt",
+          "fields": [
+            {
+              "key": "image",
+              "label": "Logo",
+              "type": "image"
+            },
+            {
+              "key": "alt",
+              "label": "Nome",
+              "type": "text"
+            }
+          ],
+          "newItem": {
+            "image": "",
+            "alt": "Apoio"
+          }
+        },
+        {
+          "key": "copyright",
+          "label": "Linha final",
+          "type": "text"
+        }
+      ]
+    }
+  ],
+  "sectionDefaults": {
+    "header": {
+      "logoImage": "",
+      "name": "",
+      "links": [
+        {
+          "label": "Quem somos",
+          "link": "/#quem-somos"
+        },
+        {
+          "label": "Associados",
+          "link": "/associados"
+        },
+        {
+          "label": "Produtos",
+          "link": "/produtos"
+        },
+        {
+          "label": "Contato",
+          "link": "/#contato"
+        }
+      ]
+    },
+    "hero": {
+      "background": "/_template/img/campo.svg",
+      "logo": "",
+      "titleImage": "",
+      "title": "Direto de quem produz",
+      "button": "Comprar",
+      "link": "/produtos",
+      "button2": "Conheça os associados",
+      "link2": "/associados"
+    },
+    "split": {
+      "anchor": "quem-somos",
+      "bg": "verde",
+      "eyebrow": "Quem somos",
+      "title": "Nossa região",
+      "text": "Conte aqui a história da região, da associação e do que torna os produtos daqui únicos.\n\nUm segundo parágrafo, se quiser.",
+      "image": "/_template/img/mapa.svg"
+    },
+    "text": {
+      "anchor": "",
+      "bg": "claro",
+      "eyebrow": "Nossa história",
+      "title": "Além da qualidade",
+      "text": "Um texto sobre a origem, as pessoas e o propósito.\n\nOutro parágrafo."
+    },
+    "gallery": {
+      "anchor": "territorio",
+      "bg": "branco",
+      "eyebrow": "Território",
+      "title": "Onde produzimos",
+      "text": "Fale do clima, do solo, da altitude.",
+      "images": [
+        {
+          "image": "/_template/img/campo.svg",
+          "alt": "Paisagem"
+        },
+        {
+          "image": "/_template/img/campo.svg",
+          "alt": "Lavoura"
+        },
+        {
+          "image": "/_template/img/campo.svg",
+          "alt": "Colheita"
+        },
+        {
+          "image": "/_template/img/campo.svg",
+          "alt": "Produtor"
+        }
+      ]
+    },
+    "stats": {
+      "anchor": "",
+      "title": "A região em números",
+      "items": [
+        {
+          "value": "1.200",
+          "label": "Produtores"
+        },
+        {
+          "value": "12",
+          "label": "Municípios"
+        },
+        {
+          "value": "65 mil ha",
+          "label": "Área de produção"
+        }
+      ],
+      "footnote": ""
+    },
+    "features": {
+      "anchor": "",
+      "background": "/_template/img/campo.svg",
+      "title": "Características dos produtos",
+      "items": [
+        {
+          "name": "Sabor",
+          "text": "Descreva aqui."
+        },
+        {
+          "name": "Aroma",
+          "text": "Descreva aqui."
+        },
+        {
+          "name": "Corpo",
+          "text": "Descreva aqui."
+        }
+      ]
+    },
+    "governance": {
+      "anchor": "governanca",
+      "eyebrow": "Governança",
+      "title": "Como estamos organizados",
+      "lead": "Somos uma associação sem fins lucrativos, formada pelos produtores e parceiros da região.",
+      "highlight": "",
+      "text": "",
+      "cardTitle": "Nosso propósito",
+      "cardText": "Escreva aqui o propósito da associação.",
+      "image": ""
+    },
+    "products": {
+      "eyebrow": "Direto de quem produz",
+      "title": "Produtos dos associados",
+      "text": "Um carrinho só: cada associado envia e recebe pela sua parte.",
+      "button": "Ver todos",
+      "count": "8"
+    },
+    "members": {
+      "anchor": "associados",
+      "eyebrow": "Quem produz",
+      "title": "Associados",
+      "button": "Ver todos",
+      "count": "8"
+    },
+    "footer": {
+      "addressTitle": "Endereço",
+      "address": "",
+      "contactText": "Saiba mais, entre em contato conosco:",
+      "facebook": "",
+      "supportTitle": "Apoio",
+      "logos": [],
+      "copyright": "© {empresa} - Todos os direitos reservados."
+    }
+  },
+  "defaults": {
+    "theme": {
+      "palette": "verde",
+      "fonts": "inter"
+    },
+    "pages": [
+      {
+        "title": "Início",
+        "slug": "/",
+        "menu": false,
+        "seoTitle": "",
+        "seoDescription": "",
+        "sections": [
+          "hero",
+          "split",
+          "text",
+          "products",
+          "gallery",
+          "stats",
+          "features",
+          "governance",
+          "members"
+        ]
+      }
+    ],
+    "newPage": [
+      "text",
+      "gallery"
+    ]
+  },
+  "variableKeys": [
+    "empresa",
+    "whatsapp",
+    "telefone",
+    "email",
+    "endereco",
+    "instagram"
+  ],
+  "variables": "Os textos aceitam {empresa}, {whatsapp}, {telefone}, {email}, {endereco} e {instagram}: o site mostra os contatos de Loja › Dados da loja › Contatos do site."
+}

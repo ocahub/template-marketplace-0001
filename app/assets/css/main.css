@@ -1,0 +1,25 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* Os padroes da aparencia "verde" (o layout troca pela escolhida no painel). */
+:root {
+  --t-moss: 74 101 72; --t-moss-dark: 47 63 46; --t-moss-light: 110 138 107;
+  --t-clay: 161 83 48; --t-clay-dark: 126 63 35; --t-ember: 212 66 31; --t-slate: 57 68 89;
+  --t-cream: 244 241 234; --t-sand: 211 208 195; --t-blush: 244 217 204;
+  --t-ink: 31 42 30; --t-ink2: 62 74 60; --t-muted: 94 106 92;
+  --t-body: 'Inter', system-ui, sans-serif; --t-display: 'Inter', system-ui, sans-serif; --t-dw: 700;
+}
+
+html { scroll-behavior: smooth; }
+body { @apply bg-cream font-sans text-ink antialiased; }
+
+@layer components {
+  .rv-container { @apply mx-auto w-full max-w-6xl px-4 sm:px-6; }
+  .rv-eyebrow { @apply text-xs font-semibold uppercase tracking-[.2em] text-clay; }
+  .rv-title { @apply font-display text-3xl tracking-tight text-moss-dark sm:text-4xl; font-weight: var(--t-dw); }
+  .rv-lead { @apply text-base leading-7 text-ink-2 sm:text-lg sm:leading-8; }
+  .rv-button { @apply inline-flex items-center justify-center rounded-full bg-ember px-6 py-3 text-sm font-semibold text-white transition hover:bg-clay-dark focus:outline-none focus-visible:ring-2 focus-visible:ring-ember focus-visible:ring-offset-2; }
+  .rv-button--ghost { @apply bg-transparent text-white ring-1 ring-inset ring-white/60 hover:bg-white/10; }
+  .rv-paras > * + * { @apply mt-4; }
+}
