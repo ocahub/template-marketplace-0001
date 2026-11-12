@@ -13,13 +13,13 @@
     "typecheck": "nuxt typecheck"
   },
   "dependencies": {
-    "@ocahub/kit": "^0.14.0",
+    "@ocahub/kit": "^0.14.1",
     "nuxt": "^4.5.2"
   },
   "devDependencies": {
+    "@nuxtjs/tailwindcss": "^6.14.0",
     "@types/node": "^22.20.5",
     "typescript": "^5.9.0",
-    "vue-tsc": "^3.1.0",
-    "@nuxtjs/tailwindcss": "^6.14.0"
+    "vue-tsc": "^3.1.0"
   }
 }
