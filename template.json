@@ -1,7 +1,7 @@
 {
   "id": "template-marketplace-0001",
   "name": "Marketplace 0001 · Associação",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "Site de associação com marketplace: a região, o território, os números, a organização, os produtos de todos os associados e a página de cada um. Verde, terracota e creme.",
   "modules": [
     "sales:ManageMarketplace"
@@ -161,7 +161,8 @@
           "key": "title",
           "label": "Título em texto",
           "type": "text",
-          "optional": true
+          "optional": true,
+          "help": "Com o título em imagem, este texto vai como descrição da imagem (o Google lê)."
         },
         {
           "key": "button",
