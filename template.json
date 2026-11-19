@@ -1,8 +1,9 @@
 {
   "id": "template-marketplace-0001",
   "name": "Marketplace 0001 · Associação",
-  "version": "1.0.1",
+  "version": "1.1.0",
   "description": "Site de associação com marketplace: a região, o território, os números, a organização, os produtos de todos os associados e a página de cada um. Verde, terracota e creme.",
+  "cover": "preview.png",
   "modules": [
     "sales:ManageMarketplace"
   ],
@@ -89,6 +90,9 @@
       "group": "Global",
       "global": true,
       "description": "Logotipo, nome, menu, conta e carrinho. Aparece em todas as páginas.",
+      "skeleton": [
+        "nav"
+      ],
       "fields": [
         {
           "key": "logoImage",
@@ -137,6 +141,9 @@
       "label": "Abertura com foto de fundo",
       "group": "Topo",
       "description": "Foto de fundo, logotipo grande, uma imagem com o título (ou o título em texto) e dois botões.",
+      "skeleton": [
+        "@image @center logo title:lg buttons"
+      ],
       "fields": [
         {
           "key": "background",
@@ -194,6 +201,9 @@
       "label": "Texto com imagem ao lado",
       "group": "Conteúdo",
       "description": "Chamada, título, texto e uma imagem (mapa, foto) ao lado.",
+      "skeleton": [
+        "eyebrow title text | image"
+      ],
       "fields": [
         {
           "key": "anchor",
@@ -255,6 +265,9 @@
       "label": "Texto",
       "group": "Conteúdo",
       "description": "Chamada, título e parágrafos, em coluna estreita.",
+      "skeleton": [
+        "@center eyebrow title text:5"
+      ],
       "fields": [
         {
           "key": "anchor",
@@ -310,6 +323,10 @@
       "label": "Texto e galeria",
       "group": "Conteúdo",
       "description": "Título e texto lado a lado, e uma faixa de fotos.",
+      "skeleton": [
+        "eyebrow title | text",
+        "gallery:4"
+      ],
       "fields": [
         {
           "key": "anchor",
@@ -389,6 +406,10 @@
       "label": "Números",
       "group": "Conteúdo",
       "description": "Números grandes com o nome, em fundo escuro.",
+      "skeleton": [
+        "@dark @center title",
+        "@dark stats:3"
+      ],
       "fields": [
         {
           "key": "anchor",
@@ -445,6 +466,10 @@
       "label": "Características com foto de fundo",
       "group": "Conteúdo",
       "description": "Título e cartões (nome e texto) sobre uma foto escurecida.",
+      "skeleton": [
+        "@image @center title",
+        "@image icons:3"
+      ],
       "fields": [
         {
           "key": "anchor",
@@ -495,6 +520,10 @@
       "label": "Organização",
       "group": "Conteúdo",
       "description": "Quem somos: texto, um destaque, um cartão (propósito) e uma imagem larga (organograma).",
+      "skeleton": [
+        "eyebrow title text:2 | quote",
+        "image:wide"
+      ],
       "fields": [
         {
           "key": "anchor",
@@ -554,6 +583,10 @@
       "label": "Produtos dos associados",
       "group": "Marketplace",
       "description": "Os produtos à venda de todos os associados: cada cartão leva ao produto, com quem vende.",
+      "skeleton": [
+        "@center eyebrow title text:1",
+        "products:4"
+      ],
       "fields": [
         {
           "key": "eyebrow",
@@ -604,6 +637,10 @@
       "label": "Associados",
       "group": "Marketplace",
       "description": "Os associados (as lojas ligadas ao marketplace), com logo e local. Cada um leva à página dele.",
+      "skeleton": [
+        "@center eyebrow title",
+        "gallery:4"
+      ],
       "fields": [
         {
           "key": "anchor",
@@ -656,6 +693,9 @@
       "group": "Global",
       "global": true,
       "description": "Endereço, contato ({email}, {whatsapp}), redes e logos de apoio. O link /#contato leva até aqui.",
+      "skeleton": [
+        "@dark text:3 | text:2 | gallery:3"
+      ],
       "fields": [
         {
           "key": "addressTitle",
