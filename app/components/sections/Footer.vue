@@ -37,5 +37,6 @@ const wa = computed(() => company.whatsappUrl())
     <div class="border-t border-white/10">
       <RhText tag="p" class="rv-container block py-5 text-xs text-white/60" path="copyright" :value="p.copyright" ph="Linha final" />
     </div>
+    <div style="text-align:center;padding:10px 16px;font-size:.8rem;opacity:.85"><RhCookiePreferences /></div>
   </footer>
 </template>
